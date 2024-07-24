@@ -51,19 +51,19 @@ def get_response(prompt):
 
 
 def main():
-  st.title("Deep Learning with Streamlit")
+  st.title("Fun Learning with 9arAI")
 
   # User Input for Learning Topic
-  learning_topic = st.text_input("What specific area of Deep Learning are you interested in today?")
+  learning_topic = st.text_input("What concept are you interested in learning today?")
 
   # User Input for Specific Challenges
-  struggles = st.text_input("Are there any specific concepts or techniques within Deep Learning you're struggling with?")
+  struggles = st.text_input("Are there any specific notions or techniques within this concept you're struggling with?")
 
   # User Input for Preferred Learning Style
   learning_style = st.selectbox("How do you typically learn best?", ("Visualizations & Animations", "Interactive Tutorials", "Written Explanations with Code Examples", "A Combination"))
 
   # User Input for Prior Knowledge (Optional)
-  prior_knowledge = st.checkbox("Do you have any prior experience with Deep Learning?")
+  prior_knowledge = st.checkbox("Do you have any prior experience with this concept?")
 
   if st.button("Ask"):
     global response_text
