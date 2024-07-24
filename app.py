@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # Placeholder for your GenerativeAI API key (**DO NOT SHARE THIS PUBLICLY**)
-API_KEY = "AIzaSyAMxO--Kq-fOGOJo-gNecxjrrUMvei58Jg"
+API_KEY = st.secrets.API_KEY
 
 # Placeholder for the response text
 response_text = ""
