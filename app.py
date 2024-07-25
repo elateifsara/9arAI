@@ -1,8 +1,14 @@
 import streamlit as st
 import google.generativeai as genai
 
+
+st.sidebar.empty()  # Clear the default sidebar content
+logo = st.sidebar.image("assets/9arAI_logo.png", caption="9arAI - Learn with Fun", width=300)
+
+API_KEY = "AIzaSyAMxO--Kq-fOGOJo-gNecxjrrUMvei58Jg"
+
 # Placeholder for your GenerativeAI API key (**DO NOT SHARE THIS PUBLICLY**)
-API_KEY = st.secrets.API_KEY
+##API_KEY = st.secrets.API_KEY
 
 # Placeholder for the response text
 response_text = ""
@@ -51,28 +57,34 @@ def get_response(prompt):
 
 
 def main():
-  st.title("Deep Learning with Streamlit")
+  st.title("9arAI - Learn with Fun")
 
   # User Input for Learning Topic
-  learning_topic = st.text_input("What specific area of Deep Learning are you interested in today?")
+  learning_topic = st.text_input("What are you interested in learning about today?")
 
   # User Input for Specific Challenges
-  struggles = st.text_input("Are there any specific concepts or techniques within Deep Learning you're struggling with?")
+  struggles = st.text_input("Are there any specific concepts or techniques within the topic you choose you're struggling with?")
 
   # User Input for Preferred Learning Style
   learning_style = st.selectbox("How do you typically learn best?", ("Visualizations & Animations", "Interactive Tutorials", "Written Explanations with Code Examples", "A Combination"))
 
   # User Input for Prior Knowledge (Optional)
-  prior_knowledge = st.checkbox("Do you have any prior experience with Deep Learning?")
+  prior_knowledge = st.checkbox("Do you have any prior experience with the topic you're struggling with?")
+  
+  # User Input for Prior Knowledge (Optional)
+  preferences = st.text_input("Do you have any preferred podcast, newsletter, or book you prefer learning from?")
 
   if st.button("Ask"):
     global response_text
     # Construct the prompt using user inputs
-    prompt = f"I want to learn about {learning_topic} in Deep Learning. I'm specifically struggling with {struggles}. I prefer learning through {learning_style}."
+    prompt = f"I want to learn about {learning_topic}. I'm specifically struggling with {struggles}. I prefer learning through {learning_style}."
 
     if prior_knowledge:
-      prompt += " I have some prior experience with Deep Learning concepts."
-
+      prompt += f" I have some prior experience with the {learning_topic}."
+     
+    if preferences : 
+      prompt += f" I usually learn from {preferences}."
+      
     response_text = get_response(prompt)
 
   st.write(response_text)
