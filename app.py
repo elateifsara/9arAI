@@ -5,10 +5,8 @@ import google.generativeai as genai
 st.sidebar.empty()  # Clear the default sidebar content
 logo = st.sidebar.image("assets/9arAI_logo.png", caption="9arAI - Learn with Fun", width=300)
 
-API_KEY = "AIzaSyAMxO--Kq-fOGOJo-gNecxjrrUMvei58Jg"
-
 # Placeholder for your GenerativeAI API key (**DO NOT SHARE THIS PUBLICLY**)
-##API_KEY = st.secrets.API_KEY
+API_KEY = st.secrets.API_KEY
 
 # Placeholder for the response text
 response_text = ""
